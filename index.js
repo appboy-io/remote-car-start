@@ -5,7 +5,7 @@ const app = express()
 const port = process.env.PORT || 3000
 const droneClient = require('./droneClient')
 
-app.get('/', async (req, res) => {
+app.post('/', async (req, res) => {
   const vehicleList = await droneClient.vehicles()
   const currentStatus = await droneClient.status(vehicleList[0].vehicle_name)
   console.log('Current Status:', currentStatus)

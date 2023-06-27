@@ -7,7 +7,6 @@ const droneClient = new DroneMobile({
 try {
   droneClient.on('ready', async () => {
     const vehicleList = await droneClient.vehicles()
-    const vehicle = vehicleList[0]
   })
 
   droneClient.on('error', async () => {
